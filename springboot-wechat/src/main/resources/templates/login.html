@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        body{
+            background: url("./background.jpeg");
+        }
+        .center {
+            background: white;
+            width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div>登录页面</div>
+    <form method="post" th:action="@{/user/login}" th:object="${userBasicInfo}" class="loginForm">
+        <div class="loginInputDiv">
+            <input type="radio" id="user" name="username" value="USER" th:checked="${userBasicInfo.username==TAG_KEY_USER}"/>
+            <label for="user">用户</label>
+            <input type="radio" id="manager" name="username" value="MANAGER" th:checked="${userBasicInfo.username==TAG_KEY_MANAGER}"/>
+            <label for="manager">管理员</label>
+            <input type="radio" id="runner" name="username" th:value="RUNNER" th:checked="${userBasicInfo.username==TAG_KEY_RUNNER}"/>
+            <label for="runner">运营人员</label>
+        </div>
+        <div class="loginInputDiv">
+            <label for="phone" class="loginLabel">手机：</label>
+            <input type="text" th:field="*{phone}" id="phone" class="loginInput" placeholder="手机：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="password" class="loginLabel">密码：</label>
+            <input type="password" th:field="*{password}" id="password" class="loginInput" placeholder="密码：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="openid" class="loginLabel" hidden>地址：</label>
+            <input type="text" th:field="*{openid}" id="openid" class="loginInput" placeholder="地址：" readonly="readonly" hidden>
+        </div>
+        <input type="submit" class="loginButton" value="登录">
+        <input type="button" name="close" value="关闭" onclick="WeixinJSBridge.call('closeWindow');" />
+    </form>
+</div>
+</body>
+</html>

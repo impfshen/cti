@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>manager</title>
+</head>
+<style>
+    body{
+        background: url("./background.jpeg");
+    }
+    .center {
+        background: white;
+        width: 400px;
+        text-align: center;
+        margin: auto;
+    }
+</style>
+<script>
+    function GetPrivacyUrl() {
+        var openID = window.location.href.split("=")[1];
+        window.location.href = "http://47.111.1.11/user/toGetPrivacy?openid=" + openID;
+    }
+    function SetPrivacyUrl() {
+        var openID = window.location.href.split("=")[1];
+        window.location.href = "http://47.111.1.11/user/toSetPrivacy?openid=" + openID;
+    }
+    function OutboundUrl() {
+        var openID = window.location.href.split("=")[1];
+        window.location.href = "http://47.111.1.11/user/toOutbound?openid=" + openID;
+    }
+    function HistoryUrl() {
+        var openID = window.location.href.split("=")[1];
+        window.location.href = "http://47.111.1.11/user/history?openid=" + openID;
+    }
+</script>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div>管理员功能模块</div>
+    <div><button onclick="GetPrivacyUrl()">查看个人信息</button></div>
+    <div><button onclick="SetPrivacyUrl()">修改个人信息</button></div>
+    <div><button onclick="OutboundUrl()">队列语音呼叫</button></div>
+    <div><button onclick="HistoryUrl()">队列呼叫记录</button></div>
+    <input type="button" name="close" value="关闭" onclick="WeixinJSBridge.call('closeWindow');" />
+</div>
+</body>
+</html>

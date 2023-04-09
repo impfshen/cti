@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+</head>
+<style>
+    body{
+        background: url("./background.jpeg");
+    }
+    .center {
+        background: white;
+        width: 400px;
+        text-align: center;
+        margin: auto;
+    }
+</style>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+<table border="1">
+    <thead>
+    <tr>
+        <th>呼叫类型</th>
+        <th>发起方</th>
+        <th>发起时间</th>
+        <th>呼叫号码</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="history:${historyList}">
+        <td th:text="${history.type}"></td>
+        <td th:text="${history.user}"></td>
+        <td th:text="${history.time}"></td>
+        <td th:text="${history.number}"></td>
+    </tr>
+    </tbody>
+</table>
+<input type="button" name="close" value="返回" onclick="history.go(-1);" />
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>route_set</title>
+    <style>
+        body{
+            background: url("./background.jpeg");
+        }
+        .center {
+            background: white;
+            width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div>查看外呼线路配置</div>
+    <form method="post" th:action="@{/user/setRoute}" th:object="${routeInfo}" class="loginForm">
+        <div class="loginInputDiv">
+            <label for="id" class="loginLabel">线路序号：</label>
+            <input type="text" th:field="*{id}" id="id" class="loginInput" placeholder="线路序号：" readonly="readonly">
+        </div>
+        <div class="loginInputDiv">
+            <label for="route_enable" class="loginLabel">是否启用：</label>
+            <input type="text" th:field="*{route_enable}" id="route_enable" class="loginInput" placeholder="是否启用：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="line_group" class="loginLabel">子线路组：</label>
+            <input type="text" th:field="*{line_group}" id="line_group" class="loginInput" placeholder="线路组：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number_limit" class="loginLabel">并发数量：</label>
+            <input type="text" th:field="*{number_limit}" id="number_limit" class="loginInput" placeholder="并发数量：" readonly="readonly">
+        </div>
+        <div class="loginInputDiv">
+            <label for="wkhour_wkday" class="loginLabel">上班日期：</label>
+            <input type="text" th:field="*{wkhour_wkday}" id="wkhour_wkday" class="loginInput" placeholder="上班日期：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="wkhour_begin" class="loginLabel">开始时间：</label>
+            <input type="text" th:field="*{wkhour_begin}" id="wkhour_begin" class="loginInput" placeholder="开始时间：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="wkhour_end" class="loginLabel">结束时间：</label>
+            <input type="text" th:field="*{wkhour_end}" id="wkhour_end" class="loginInput" placeholder="结束时间：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="work_week" class="loginLabel">工作日期：</label>
+            <input type="text" th:field="*{work_week}" id="work_week" class="loginInput" placeholder="工作日期：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number_cacheable" class="loginLabel">号码缓存：</label>
+            <input type="text" th:field="*{number_cacheable}" id="number_cacheable" class="loginInput" placeholder="号码缓存：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="destination_extension" class="loginLabel">路由条件：</label>
+            <input type="text" th:field="*{destination_extension}" id="destination_extension" class="loginInput" placeholder="路由条件：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="destination_dialplan" class="loginLabel">拨号方案：</label>
+            <input type="text" th:field="*{destination_dialplan}" id="destination_dialplan" class="loginInput" placeholder="拨号方案：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="destination_context" class="loginLabel">呼叫路由：</label>
+            <input type="text" th:field="*{destination_context}" id="destination_context" class="loginInput" placeholder="呼叫路由：">
+        </div>
+        <input type="submit" class="loginButton" value="保存">
+        <input type="button" name="close" value="返回" onclick="history.go(-1);" />
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<style>
+    body{
+        background: url("./background.jpeg");
+    }
+    .center {
+        background: white;
+        width: 400px;
+        text-align: center;
+        margin: auto;
+    }
+</style>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div>请先登录后才能使用相应功能</div>
+    <input type="button" name="close" value="关闭" onclick="WeixinJSBridge.call('closeWindow');" />
+</div>
+</body>
+</html>

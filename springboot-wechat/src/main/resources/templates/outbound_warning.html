@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>outbound_warning</title>
+</head>
+<style>
+    body{
+        background: url("./background.jpeg");
+    }
+    .center {
+        background: white;
+        width: 400px;
+        text-align: center;
+        margin: auto;
+    }
+</style>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div th:text="${message}"></div>
+    <input type="button" name="close" value="返回" onclick="history.go(-1);" />
+</div>
+</body>
+</html>

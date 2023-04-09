@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>outbound</title>
+    <style>
+        body {
+            background: url("./background.jpeg");
+        }
+        .center {
+            background: white;
+            width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div>设置号码队列</div>
+    <form method="post" th:action="@{/user/outbound}" th:object="${numberQueue}" class="loginForm">
+        <div class="loginInputDiv">
+            <label for="name" class="loginLabel">名称：</label>
+            <input type="text" th:field="*{name}" id="name" class="loginInput" placeholder="名称：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number1" class="loginLabel">号码1：</label>
+            <input type="text" th:field="*{number1}" id="number1" class="loginInput" placeholder="号码1：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number2" class="loginLabel">号码2：</label>
+            <input type="text" th:field="*{number2}" id="number2" class="loginInput" placeholder="号码2：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number3" class="loginLabel">号码3：</label>
+            <input type="text" th:field="*{number3}" id="number3" class="loginInput" placeholder="号码3：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number4" class="loginLabel">号码4：</label>
+            <input type="text" th:field="*{number4}" id="number4" class="loginInput" placeholder="号码4：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number5" class="loginLabel">号码5：</label>
+            <input type="text" th:field="*{number5}" id="number5" class="loginInput" placeholder="号码5：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number6" class="loginLabel">号码6：</label>
+            <input type="text" th:field="*{number6}" id="number6" class="loginInput" placeholder="号码6：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number7" class="loginLabel">号码7：</label>
+            <input type="text" th:field="*{number7}" id="number7" class="loginInput" placeholder="号码7：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number8" class="loginLabel">号码8：</label>
+            <input type="text" th:field="*{number8}" id="number8" class="loginInput" placeholder="号码8：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="number9" class="loginLabel">号码9：</label>
+            <input type="text" th:field="*{number9}" id="number9" class="loginInput" placeholder="号码9：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="openid" class="loginLabel" hidden>OpenID：</label>
+            <input type="text" th:field="*{openid}" id="openid" class="loginInput" placeholder="OpenID：" readonly="readonly" hidden>
+        </div>
+        <input type="submit" class="loginButton" value="确定">
+        <input type="button" name="close" value="返回" onclick="history.go(-1);" />
+    </form>
+</div>
+</body>
+</html>

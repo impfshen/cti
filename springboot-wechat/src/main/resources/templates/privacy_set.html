@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>privacy_set</title>
+    <style>
+        body{
+            background: url("./background.jpeg");
+        }
+        .center {
+            background: white;
+            width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <br><br><br><br><br><br><br><br>
+</div>
+<div class="center">
+    <div>编辑个人信息</div>
+    <form method="post" th:action="@{/user/setPrivacy}" th:object="${userPersonalInfo}" class="loginForm">
+        <div class="loginInputDiv">
+            <label for="phone" class="loginLabel">性别：</label>
+            <input type="text" th:field="*{phone}" id="phone" class="loginInput" placeholder="性别：" readonly="readonly">
+        </div>
+        <div class="loginInputDiv">
+            <label for="sex" class="loginLabel">性别：</label>
+            <input type="text" th:field="*{sex}" id="sex" class="loginInput" placeholder="性别：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="city" class="loginLabel">城市：</label>
+            <input type="text" th:field="*{city}" id="city" class="loginInput" placeholder="城市：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="email" class="loginLabel">邮箱：</label>
+            <input type="text" th:field="*{email}" id="email" class="loginInput" placeholder="邮箱：">
+        </div>
+        <div class="loginInputDiv">
+            <label for="profession" class="loginLabel">职业：</label>
+            <input type="text" th:field="*{profession}" id="profession" class="loginInput" placeholder="职业：">
+        </div>
+        <input type="submit" class="loginButton" value="保存">
+        <input type="button" name="close" value="返回" onclick="history.go(-1);" />
+    </form>
+</div>
+</body>
+</html>
